@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string-array name="array_spinner_brand">
+        <item>Mercedes</item>
+        <item>Audi</item>
+        <item>Toyota</item>
+    </string-array>
+
+    <string-array name="array_spinner_type">
+        <item>Convertible</item>
+        <item>Supercar</item>
+        <item>SUV</item>
+    </string-array>
+
+    <string-array name="array_spinner_year">
+        <item>2000</item>
+        <item>2001</item>
+        <item>2002</item>
+    </string-array>
 </resources>
