@@ -10,6 +10,7 @@ import com.example.android.myapplication.pojo.MyWebService;
 
 import java.util.List;
 
+import butterknife.BindView;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -24,20 +25,19 @@ public class MainActivity extends AppCompatActivity {
 
     Retrofit retrofit;
     MyWebService service;
-    private EditText editTextId;
-    private EditText editTextName;
-    private EditText editTextPrice;
-    private EditText editTextEngine;
-
+    @BindView(R.id.edit_text_id)
+    EditText editTextId;
+    @BindView(R.id.edit_text_name)
+    EditText editTextName;
+    @BindView(R.id.edit_text_price)
+    EditText editTextPrice;
+    @BindView(R.id.edit_text_engine)
+    EditText editTextEngine;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        editTextId = (EditText) findViewById(R.id.edit_text_id);
-        editTextName = (EditText) findViewById(R.id.edit_text_name);
-        editTextPrice = (EditText) findViewById(R.id.edit_text_price);
-        editTextEngine = (EditText) findViewById(R.id.edit_text_engine);
 
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
