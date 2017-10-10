@@ -20,5 +20,4 @@ public class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedL
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }
-
 }

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="get">Get</string>
+    <string name="vehicle_number_id">Vehicle number ID:</string>
+    <string name="name">Name:</string>
     <string-array name="array_spinner_brand">
         <item>Mercedes</item>
         <item>Audi</item>

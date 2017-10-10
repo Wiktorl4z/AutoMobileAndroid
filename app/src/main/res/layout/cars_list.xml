@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cars_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,9 +10,10 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/image_view_car1"
+            android:id="@+id/image_view_car"
             android:layout_width="150dp"
-            android:layout_height="150dp" />
+            android:layout_height="150dp"
+            android:src="@drawable/jeep" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="Vehicle number ID: "
+                android:hint="@string/vehicle_number_id"
                 android:textColor="@color/black" />
 
             <TextView
@@ -33,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="Name: "
+                android:hint="@string/name"
                 android:textColor="@color/black" />
 
             <TextView

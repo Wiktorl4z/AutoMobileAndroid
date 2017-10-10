@@ -8,7 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.android.myapplication.pojo.Car;
+
+import java.util.List;
 
 /**
  * Created by l4z on 09.10.2017.
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 
 public class Adapter extends ArrayAdapter<Car> {
 
-    public Adapter(Activity context, ArrayList<Car> items) {
+    public Adapter(Activity context, List<Car> items) {
         super(context, 0, items);
     }
 
@@ -30,8 +32,8 @@ public class Adapter extends ArrayAdapter<Car> {
         }
 
         Car currentItem = getItem(position);
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image_view_car1);
-        imageView.setImageResource(currentItem.getImage());
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image_view_car);
+        imageView.setImageResource(R.drawable.jeep);
 
         TextView tViCarId = (TextView) listItemView.findViewById(R.id.text_view_car_id);
         tViCarId.setText("Vehical number: " + currentItem.getId());

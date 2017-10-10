@@ -9,8 +9,8 @@ import retrofit2.http.POST;
 
 public interface MyWebService {
     @GET("/cars")
-    Call<List<DataBody>>  getData();
+    Call<List<Car>> getData();
 
     @POST("/cars")
-    Call<List<DataBody>> postData(@Body DataBody pBody);
+    Call<List<Car>> postData(@Body Car car);
 }
