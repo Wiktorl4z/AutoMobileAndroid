@@ -8,19 +8,28 @@ import android.widget.Spinner;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by l4z on 09.10.2017.
  */
 
 public class TestActivity extends AppCompatActivity {
 
+    @BindView(R.id.spinner_brand) Spinner spinnerBrand;
+    @BindView(R.id.spinner_type) Spinner spinnerType;
+    @BindView(R.id.spinner_year) Spinner spinnerYeah;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cars_layout);
 
-        setListener(R.id.spinner_brand);
-        setListener(R.id.spinner_type);
-        setListener(R.id.spinner_year);
+        ButterKnife.bind(this);
+
+        spinnerBrand.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+        spinnerType.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+        spinnerYeah.setOnItemSelectedListener(new CustomOnItemSelectedListener());
 
         ArrayList<Car> items = new ArrayList<>();
         items.add(new Car(1, "Audi", new BigDecimal(200000), "Super Turbo", R.drawable.car, 5));
@@ -34,10 +43,5 @@ public class TestActivity extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.list_view1);
         listView.setAdapter(adapter);
-    }
-
-    private void setListener(int spinner_brand) {
-        Spinner spinnerBrand = (Spinner) findViewById(spinner_brand);
-        spinnerBrand.setOnItemSelectedListener(new CustomOnItemSelectedListener());
     }
 }
