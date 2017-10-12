@@ -67,10 +67,10 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="40dp"
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
         android:scrollbars="vertical" />
 
 </android.support.constraint.ConstraintLayout>
