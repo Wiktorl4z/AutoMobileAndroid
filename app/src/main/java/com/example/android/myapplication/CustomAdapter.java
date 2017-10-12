@@ -20,9 +20,10 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-    private ArrayList<Car> dataSet;
+    private List<Car> dataSet;
 
-    public CustomAdapter(TestActivity testActivity, List<Car> items) {
+    public CustomAdapter(List<Car> items) {
+        this.dataSet = items;
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -32,7 +33,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView textViewCarPrice;
         TextView textViewCarEngine;
         TextView textViewCarPassenger;
-        ImageView imageViewIcon;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -41,12 +41,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             this.textViewCarPrice = (TextView) itemView.findViewById(R.id.text_view_car_price);
             this.textViewCarEngine = (TextView) itemView.findViewById(R.id.text_view_car_engine);
             this.textViewCarPassenger = (TextView) itemView.findViewById(R.id.text_view_car_passenger);
-            this.imageViewIcon = (ImageView) itemView.findViewById(R.id.text_view_car_passenger);
         }
-    }
-
-    public CustomAdapter(ArrayList<Car> data) {
-        this.dataSet = data;
     }
 
     @Override
@@ -67,14 +62,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         TextView textViewCarPrice = holder.textViewCarPrice;
         TextView textViewCarEngine = holder.textViewCarEngine;
         TextView textViewCarPassenger = holder.textViewCarPassenger;
-        ImageView imageViewIcon = holder.imageViewIcon;
 
-        textViewCarId.setText(dataSet.get(listPosition).getId());
-        textViewCarName.setText(dataSet.get(listPosition).getName());
-        textViewCarPrice.setText(dataSet.get(listPosition).getPrice()+"$");
-        textViewCarEngine.setText(dataSet.get(listPosition).getEngine());
-        textViewCarPassenger.setText(dataSet.get(listPosition).getPassenger());
-        imageViewIcon.setImageResource(R.drawable.jeep);
+        textViewCarId.setText("Numer: " + dataSet.get(listPosition).getId());
+        textViewCarName.setText("Nazwa: " + dataSet.get(listPosition).getName());
+        textViewCarPrice.setText("Cena: " + dataSet.get(listPosition).getPrice() + "$");
+        textViewCarEngine.setText("Silnik " + dataSet.get(listPosition).getEngine());
+        textViewCarPassenger.setText("Miejsca: " + dataSet.get(listPosition).getPassenger());
     }
 
     @Override

@@ -1,21 +1,14 @@
 package com.example.android.myapplication;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.myapplication.pojo.Car;
 import com.example.android.myapplication.pojo.MyWebService;
@@ -36,7 +29,7 @@ import retrofit2.Response;
 public class TestActivity extends AppCompatActivity {
 
     private static RecyclerView.Adapter adapter;
-    private static final String CLASS_TAG = "MainActivity";
+    private static final String CLASS_TAG = "TestActivity";
     public static View.OnClickListener myOnClickListener;
     private MyWebService service;
     static List<Car> items;
@@ -77,9 +70,8 @@ public class TestActivity extends AppCompatActivity {
                     public void onResponse(Call<List<Car>> call, Response<List<Car>> response) {
                         items = response.body();
 
-                        adapter = new CustomAdapter(TestActivity.this, items);
+                        adapter = new CustomAdapter(items);
                         recyclerView.setAdapter(adapter);
-
                     }
 
                     @Override
