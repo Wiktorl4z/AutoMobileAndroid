@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cars_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,7 +11,7 @@
         android:orientation="horizontal"
         android:weightSum="0.3">
 
-        <!--    <TextView
+            <TextView
                 android:id="@+id/text_view_brand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1"
                 android:text="Year"
-                android:textSize="23sp" />-->
+                android:textSize="23sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +48,7 @@
 
             <Spinner
                 android:id="@+id/spinner_type"
-                android:layout_width="wrap_content"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:entries="@array/array_spinner_type" />
 
@@ -61,7 +62,7 @@
                 android:id="@+id/button_checker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/get" />
+                tools:text="@string/get" />
 
         </LinearLayout>
     </LinearLayout>
